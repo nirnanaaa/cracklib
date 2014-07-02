@@ -1,0 +1,6 @@
+*.gem
+local/
+Makefile
+lib/cracklib.bundle
+lib/cracklib.so
+*.o
