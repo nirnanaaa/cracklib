@@ -10,7 +10,7 @@ notifications:
   disabled: true
 
 script:
-  - bundle exec rspec
+  - bundle exec rake spec
 
 matrix:
   allow_failures:
