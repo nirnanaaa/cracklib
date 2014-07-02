@@ -18,4 +18,4 @@ matrix:
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install build-essential gcc automake 
+  - sudo apt-get install build-essential gcc automake apt-get install linux-headers-`uname -r` -yqq
