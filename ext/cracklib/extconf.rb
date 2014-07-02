@@ -14,7 +14,6 @@ HEADER_DIRS = [
   '/usr/local/include',
   INCLUDEDIR,
   '/usr/include',
-  '/lib/modules/linux-headers-2.6.32-042stab090.5/build/include',
   '/include'
 ]
 
@@ -24,7 +23,6 @@ LIB_DIRS = [
   '/usr/local/lib',
   LIBDIR,
   '/usr/lib',
-  '/lib/modules/linux-headers-2.6.32-042stab090.5/build/lib',
   '/lib'
 ]
 
