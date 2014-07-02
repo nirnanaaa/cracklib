@@ -25,12 +25,12 @@ LIB_DIRS = [
 ]
 
 
-find_header("sys/types.h")
-find_header("errno.h")
-find_header("limits.h")
-find_header("string.h")
-find_header("pwd.h")
-find_header("stdlib.h")
+#find_header("sys/types.h")
+#find_header("errno.h")
+#find_header("limits.h")
+#find_header("string.h")
+#find_header("pwd.h")
+#find_header("stdlib.h")
 find_header("crack.h")
 
 find_library("crack", "FascistCheck")

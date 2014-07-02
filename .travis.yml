@@ -19,5 +19,3 @@ matrix:
 before_install:
   - sudo apt-get update
   - sudo apt-get install build-essential gcc automake 
-before_script:
-  - bundle exec rake compile
