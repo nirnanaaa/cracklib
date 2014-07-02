@@ -4,3 +4,5 @@ Makefile
 lib/cracklib.bundle
 lib/cracklib.so
 *.o
+tmp/
+vendor/cracklib/config.log
