@@ -17,6 +17,5 @@ matrix:
     - rvm: ruby-head
 
 before_install:
-  - sudo apt-get update
-  - echo $(uname -r)
-  - sudo apt-get install build-essential gcc automake linux-headers-$(uname -r) -yqq
+  - sudo apt-get update -yqq
+  - sudo apt-get install build-essential gcc automake ruby-dev -yqq
