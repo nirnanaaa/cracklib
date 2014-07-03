@@ -1,6 +1,9 @@
 require 'mkmf'
+$:.push File.expand_path("../../../lib", __FILE__)
+require 'cracklib/root'
 
-vendor_path = File.expand_path('../../../vendor/cracklib',__FILE__)
+vendor_path = File.join(Cracklib.root, 'vendor/cracklib')
+puts "Vendor path: %s" % vendor_path
 
 `cd #{vendor_path} && ./configure && make`
 
@@ -19,13 +22,17 @@ HEADER_DIRS = [
 
 LIB_DIRS = [
   "#{vendor_path}/lib",
-  '/opt/local/lib',
   '/usr/local/lib',
   LIBDIR,
   '/usr/lib',
-  '/lib'
 ]
+LIB_DIRS << '/lib' if File.exist?("/lib")
+LIB_DIRS << '/opt/local/lib' if File.exist?("/opt/local/lib")
 
+HEADER_DIRS.each{|h| $LDFLAGS << " -I %s" % h}
+LIB_DIRS.each{|l| $LDFLAGS << " -L %s" % l }
+
+dir_config('cracklib', HEADER_DIRS, LIB_DIRS)
 
 find_header("sys/types.h")
 find_header("errno.h")
@@ -38,5 +45,4 @@ find_header("crack.h")
 find_library("crack", "FascistCheck")
 
 
-dir_config('cracklib', HEADER_DIRS, LIB_DIRS)
 create_makefile('cracklib')
