@@ -19,3 +19,5 @@ matrix:
 before_install:
   - sudo apt-get update -yqq
   - sudo apt-get install build-essential gcc automake ruby-dev -yqq
+after_failure:
+  - find . -type f -name mkmf.log|xargs cat
