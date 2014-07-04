@@ -21,16 +21,13 @@ HEADER_DIRS = [
 ]
 
 LIB_DIRS = [
-  "#{vendor_path}/lib",
+  "#{vendor_path}/lib/.libs",
   '/usr/local/lib',
   LIBDIR,
   '/usr/lib',
 ]
 LIB_DIRS << '/lib' if File.exist?("/lib")
 LIB_DIRS << '/opt/local/lib' if File.exist?("/opt/local/lib")
-
-HEADER_DIRS.each{|h| $LDFLAGS << " -I %s" % h}
-LIB_DIRS.each{|l| $LDFLAGS << " -L %s" % l }
 
 dir_config('cracklib', HEADER_DIRS, LIB_DIRS)
 
